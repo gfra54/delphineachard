@@ -1,0 +1,4 @@
+title: Albums
+order: numeric
+template: album
+fieldset: album

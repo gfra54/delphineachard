@@ -1,0 +1,13 @@
+title: Réglages
+sections:
+  main:
+    display: Main
+    fields:
+      illustration_home:
+        container: main
+        folder: /
+        restrict: true
+        max_files: 1
+        type: assets
+        display: 'Illustration par défaut de la page d''accueil'
+taxonomies: true

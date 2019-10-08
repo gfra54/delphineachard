@@ -1,0 +1,47 @@
+app_key: FwqX07SZOM6JaBnLM7sJnpH4jUFicceg
+yaml_parser: symfony
+license_key: 1dd4e714-669b-4118-b543-bd94b1389b83
+timezone: UTC
+date_format: 'F jS, Y'
+default_extension: md
+send_powered_by_header: true
+ensure_unique_ids: true
+filesystems:
+  content:
+    driver: local
+    root: site/content
+  storage:
+    driver: local
+    root: site/storage
+  users:
+    driver: local
+    root: site/users
+  themes:
+    driver: local
+    root: site/themes
+    url: /site/themes
+redactor:
+  -
+    name: Standard
+    settings:
+      buttons:
+        - formatting
+        - bold
+        - italic
+        - link
+        - unorderedlist
+        - orderedlist
+        - html
+  -
+    name: Basic
+    settings:
+      buttons:
+        - bold
+        - italic
+csrf_exclude: {  }
+php_max_memory_limit: null
+locales:
+  en:
+    name: English
+    full: en_US
+    url: /

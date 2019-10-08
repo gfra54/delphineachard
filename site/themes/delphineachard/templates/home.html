@@ -1,0 +1,17 @@
+    <section class="hero is-fullheight wrapper">
+    	<div class="hero-body">
+    		<div class="container contenu">
+    			<section>
+    				<ul class="albums">
+    					{{ collection:albums }}
+    					<li><a data-illustration='{{if illustration | contains:mp4 }}{{ illustration }}{{ else }}{{ glide:illustration width="2000" height="1200" crop="focal_crop"}}{{ /if }}' href="{{ url }}">{{ title }}</a></li>
+    					{{ /collection:albums }}
+    					<li><a href="about">about</a></li>
+    					<li><a href="contact">contact</a></li>
+    				</ul>
+
+    			</section>
+    		</div>
+    		<div class="illustration" style='background-image:url({{ glide:illustration_home width="2000" height="1200" crop="focal_crop"}});'></div>
+    	</div>
+    </section>

@@ -1,0 +1,62 @@
+<a name="s0"></a>
+<div class="album">
+	<section class="hero is-fullheight">
+		<div class="hero-body">
+			<div class="container">
+				<h2 class="title has-text-white">
+					{{ title }}
+				</h2>
+				<h3 class="subtitle has-text-light">
+					<p>{{content}}</p>
+				</h3>
+				<p>{{ documents|count }} pictures in this album</p>
+				<p class="has-text-white">-</p>
+				<p>
+					<a href="{{site_url}}" class="has-text-dark">🡰 go back to albums</a>
+				</p>
+			</div>
+		</div>
+		<a class="lien-slide next-slide has-text-white" href="#s1"></a>
+	</section>
+
+
+	{{ documents }}
+	<a name="s{{index}}"></a>
+	<section class="hero is-fullheight document" style='background-image: url({{ glide:value width="2000" height="1200" crop="focal_crop"}})'>
+		<a class="lien-slide prev-slide has-text-white" href="#s{{index | subtract:1}}"></a>
+		<div class="hero-body">
+			<div class="container">
+
+			</div>
+		</div>
+		<a class="lien-slide next-slide has-text-white" href="#s{{index | add:1}}"></a>
+	</section>
+	{{ /documents }}
+	<a name="s{{ documents | count | add:1}}"></a>
+
+
+
+	<section class="hero is-fullheight has-text-white has-background-dark">
+		<a class="lien-slide prev-slide has-text-white" href="#top"></a>
+		<div class="hero-body">
+			<div class="container">
+				<p class="subtitle has-text-white">this was ...</p>
+				<h2 class="title has-text-white">{{ title }}</h2>
+				<p>
+					<a href="{{site_url}}">🡰 go back to albums</a>
+				</p>
+				<p>-</p>
+				{{ delphineachard:next_album debut="true" slug="{slug}"}}
+				<p>
+					<a href='{{ delphineachard:next_album champ="url" slug="{slug}"}}'>see nex album : &laquo; <u>{{ delphineachard:next_album champ="title" slug="{slug}"}}</u> &raquo; 🡺</a>
+				</p>
+				{{ delphineachard:next_album fin="true" slug="{slug}"}}
+
+
+
+			</div>
+		</div>
+	</section>
+
+</div>
+

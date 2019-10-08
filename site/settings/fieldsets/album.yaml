@@ -1,0 +1,27 @@
+title: Album
+sections:
+  main:
+    display: Main
+    fields:
+      description:
+        restrict_assets: false
+        type: redactor
+        display: Description
+      documents:
+        container: main
+        folder: /
+        restrict: true
+        mode: grid
+        type: assets
+        display: Documents
+        validate: 'ext:jpg,jpeg,png,gif,mp4'
+      illustration:
+        container: main
+        folder: /
+        restrict: true
+        max_files: 1
+        type: assets
+        instructions: 'Image ou vidéo affichée sur la page d''accueil pour cet album'
+        display: Illustration
+        validate: 'ext:jpg,jpeg,png,gif,mp4'
+taxonomies: false

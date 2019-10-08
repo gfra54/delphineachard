@@ -1,0 +1,4 @@
+collections:
+  albums: '/album/{slug}'
+pages:
+  about: 'about'
