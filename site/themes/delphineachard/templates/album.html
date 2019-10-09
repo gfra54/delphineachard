@@ -19,15 +19,16 @@
 		<a class="lien-slide next-slide has-text-white" href="#s1">{{ delphineachard:fleche }}</a>
 	</section>
 
-{{ docs }}
+	{{ docs }}
+	<a name="s{{index}}"></a>
 	{{partial src={ type } }}
-{{ /docs }}
+	{{ /docs }}
 
 
 
-
+	<a name="s{{docs | count | add:1}}"></a>
 	<section class="hero is-fullheight has-text-white has-background-dark">
-		<a class="lien-slide prev-slide has-text-white" name="s{{docs | count | add:1}}" href="#s0">{{ delphineachard:fleche }}</a>
+		<a class="lien-slide prev-slide has-text-white" href="#s0">{{ delphineachard:fleche }}</a>
 		<div class="hero-body">
 			<div class="container">
 				<p class="subtitle has-text-white">this was ...</p>

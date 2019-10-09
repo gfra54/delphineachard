@@ -1,6 +1,6 @@
 	{{ if afficher_en_plein_ecran}}
 		<section class="hero is-fullheight document document-fullscreen {{if couleur_de_fond == 'white'}}has-background-white{{ else }}has-background-black{{ /if }}" style='background-image: url({{ glide:photo width="1900" height="900" crop="focal_crop"}});'>
-			<a class="lien-slide prev-slide has-text-white" name="s{{index}}" href="#s{{index | subtract:1}}">{{ delphineachard:fleche }}</a>
+			<a class="lien-slide prev-slide has-text-white" href="#s{{index | subtract:1}}">{{ delphineachard:fleche }}</a>
 			<div class="hero-body">
 				<div class="container">
 
@@ -10,7 +10,7 @@
 		</section>
 	{{ else }}
 		<section class="hero is-fullheight document {{if couleur_de_fond == 'white'}}has-background-white{{ else }}has-background-black{{ /if }}" style='background-image: url({{ photo | urlencode }});background-color: {{couleur_de_fond}}'>
-			<a class="lien-slide prev-slide has-text-white" name="s{{index}}" href="#s{{index | subtract:1}}">{{ delphineachard:fleche }}</a>
+			<a class="lien-slide prev-slide has-text-white" href="#s{{index | subtract:1}}">{{ delphineachard:fleche }}</a>
 			<div class="hero-body">
 				<div class="container">
 

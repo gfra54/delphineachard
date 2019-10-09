@@ -168,24 +168,35 @@ a:hover {
 		&:hover {
 			svg {
 				fill:black;
-			filter: drop-shadow( 1px 1px 7px rgba(256,256,256,0.5));
+				filter: drop-shadow( 1px 1px 7px rgba(256,256,256,0.5));
 			}
 		}
 		&.next-slide {
-			bottom: 15px;
+			bottom: 50px;
 			svg {
 				transform: rotate(-90deg);
 			}
 		}
 		&.prev-slide {
-			top: 15px;
+			top: 50px;
 			svg {
 				transform: rotate(90deg);
 			}
 		}
 	}
 }
-
+@media screen and (min-width: 767px) {
+	.album {
+		.lien-slide {
+			&.next-slide {
+				bottom: 15px;
+			}
+			&.prev-slide {
+				top: 15px;
+			}
+		}
+	}
+}
 
 .page .container {
 	padding-top: 80px;
