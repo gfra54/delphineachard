@@ -7,14 +7,6 @@ sections:
         restrict_assets: false
         type: redactor
         display: Description
-      documents:
-        container: main
-        folder: /
-        restrict: true
-        mode: grid
-        type: assets
-        display: Documents
-        validate: 'ext:jpg,jpeg,png,gif,mp4'
       illustration:
         container: main
         folder: /
@@ -24,4 +16,59 @@ sections:
         instructions: 'Image ou vidéo affichée sur la page d''accueil pour cet album'
         display: Illustration
         validate: 'ext:jpg,jpeg,png,gif,mp4'
+      afficher_en_plein_ecran:
+        type: toggle
+        display: 'Afficher en plein écran'
+        default: true
+      couleur_de_fond:
+        options:
+          white: 'Fond blanc'
+          black: 'Fond noir'
+        type: select
+        display: 'Couleur de fond'
+        default: black
+      docs:
+        sets:
+          photo:
+            display: Photo
+            fields:
+              photo:
+                container: main
+                folder: /
+                restrict: true
+                max_files: 1
+                type: assets
+                display: Photo
+                validate: 'ext:jpg,jpeg,png,gif'
+              afficher_en_plein_ecran:
+                type: toggle
+                display: 'Afficher en plein écran'
+                default: true
+              couleur_de_fond:
+                options:
+                  white: 'Fond blanc'
+                  black: 'Fond noir'
+                type: select
+                display: 'Couleur de fond'
+                default: black
+          video:
+            display: Vidéo
+            fields:
+              video:
+                container: main
+                folder: /
+                restrict: true
+                max_files: 1
+                type: assets
+                display: Video
+                validate: 'ext:mp4'
+              couleur_de_fond:
+                options:
+                  white: 'Fond blanc'
+                  black: 'Fond noir'
+                type: select
+                display: 'Couleur de fond'
+                default: black
+        type: replicator
+        display: Docs
 taxonomies: false

@@ -56,7 +56,10 @@ header {
 		z-index: 0;
 		background-attachment: fixed;
 		background: no-repeat center center ;
-		background-size: cover;
+		background-size: contain;
+		&.illustration-fullscreen {
+			background-size: cover;
+		}
 		video {
 			position: fixed;
 			top: 0;
@@ -81,6 +84,7 @@ a:hover {
 .albums {
 	li {
 		a {
+			text-shadow: 1px 1px 7px rgba(0,0,0,0.5);
 			font-family: Poppins;
 			font-size: 40px;
 			text-transform: lowercase;
@@ -91,6 +95,7 @@ a:hover {
 				margin-left: .5em;
 			}
 			&:hover {
+				text-shadow: 0px;
 				background:white;
 				&:after {
 					opacity: 1;
@@ -114,7 +119,22 @@ a:hover {
 	}
 	.document {
 		background: no-repeat center center black;
-		background-size: cover;
+		background-size: contain;
+		&.document-fullscreen {
+			background: no-repeat center center black;
+			background-size: cover;
+
+		}
+		&.document-video {
+			position: relative;
+			video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
 	}
 	.album-end {
 

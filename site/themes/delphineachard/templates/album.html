@@ -7,9 +7,9 @@
 					{{ title }}
 				</h2>
 				<h3 class="subtitle has-text-light">
-					<p>{{content}}</p>
+					<p>{{ description }}</p>
 				</h3>
-				<p>{{ documents|count }} pictures in this album</p>
+				<p>{{ docs|count }} pictures in this album</p>
 				<p class="has-text-white">-</p>
 				<p>
 					<a href="{{site_url}}" class="has-text-dark">🡰 go back to albums</a>
@@ -19,25 +19,15 @@
 		<a class="lien-slide next-slide has-text-white" href="#s1"></a>
 	</section>
 
+{{ docs }}
+	{{partial src={ type } }}
+{{ /docs }}
 
-	{{ documents }}
-	<a name="s{{index}}"></a>
-	<section class="hero is-fullheight document" style='background-image: url({{ glide:value width="2000" height="1200" crop="focal_crop"}})'>
-		<a class="lien-slide prev-slide has-text-white" href="#s{{index | subtract:1}}"></a>
-		<div class="hero-body">
-			<div class="container">
-
-			</div>
-		</div>
-		<a class="lien-slide next-slide has-text-white" href="#s{{index | add:1}}"></a>
-	</section>
-	{{ /documents }}
-	<a name="s{{ documents | count | add:1}}"></a>
 
 
 
 	<section class="hero is-fullheight has-text-white has-background-dark">
-		<a class="lien-slide prev-slide has-text-white" href="#top"></a>
+		<a class="lien-slide prev-slide has-text-white" name="s{{docs | count | add:1}}" href="#top"></a>
 		<div class="hero-body">
 			<div class="container">
 				<p class="subtitle has-text-white">this was ...</p>

@@ -10,4 +10,15 @@ sections:
         max_files: 1
         type: assets
         display: 'Illustration par défaut de la page d''accueil'
+      afficher_en_plein_ecran_home:
+        type: toggle
+        display: 'Afficher en plein écran'
+        default: true
+      couleur_de_fond_home:
+        options:
+          white: 'Fond blanc'
+          black: 'Fond noir'
+        type: select
+        display: 'Couleur de fond'
+        default: black
 taxonomies: true

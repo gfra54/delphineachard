@@ -1,4 +1,8 @@
 illustration_home: /assets/1w9a9788_1-apres-rvb.jpg
+afficher_en_plein_ecran_home: true
+couleur_de_fond_home: white
+afficher_en_plein_ecran: false
+couleur_de_fond: white
 fieldset: reglages
 title: Réglages
 id: 66fa071d-f0d7-4a99-840c-b787320e8007
