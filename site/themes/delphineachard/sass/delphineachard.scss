@@ -154,8 +154,7 @@ a:hover {
 	.lien-slide {
 		z-index: 1000;
 		user-select: none;		
-		width: 65px;
-		padding:15px;
+		width: 50px;
 		text-align: center;
 		font-size: 40px;
 		position: relative;
@@ -173,13 +172,13 @@ a:hover {
 			}
 		}
 		&.next-slide {
-			bottom: 0;
+			bottom: 15px;
 			svg {
 				transform: rotate(-90deg);
 			}
 		}
 		&.prev-slide {
-			top: 0;
+			top: 15px;
 			svg {
 				transform: rotate(90deg);
 			}
