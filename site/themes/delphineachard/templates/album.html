@@ -12,11 +12,11 @@
 				<p>{{ docs|count }} pictures in this album</p>
 				<p class="has-text-white">-</p>
 				<p>
-					<a href="{{site_url}}" class="has-text-dark">🡰 go back to albums</a>
+					<a href="{{site_url}}" class="back has-text-dark">{{ delphineachard:fleche }} go back to albums</a>
 				</p>
 			</div>
 		</div>
-		<a class="lien-slide next-slide has-text-white" href="#s1"></a>
+		<a class="lien-slide next-slide has-text-white" href="#s1">{{ delphineachard:fleche }}</a>
 	</section>
 
 {{ docs }}
@@ -27,18 +27,18 @@
 
 
 	<section class="hero is-fullheight has-text-white has-background-dark">
-		<a class="lien-slide prev-slide has-text-white" name="s{{docs | count | add:1}}" href="#top"></a>
+		<a class="lien-slide prev-slide has-text-white" name="s{{docs | count | add:1}}" href="#top">{{ delphineachard:fleche }}</a>
 		<div class="hero-body">
 			<div class="container">
 				<p class="subtitle has-text-white">this was ...</p>
 				<h2 class="title has-text-white">{{ title }}</h2>
 				<p>
-					<a href="{{site_url}}">🡰 go back to albums</a>
+					<a class="back" href="{{site_url}}">{{ delphineachard:fleche }} go back to albums</a>
 				</p>
 				<p>-</p>
 				{{ delphineachard:next_album debut="true" slug="{slug}"}}
 				<p>
-					<a href='{{ delphineachard:next_album champ="url" slug="{slug}"}}'>see nex album : &laquo; <u>{{ delphineachard:next_album champ="title" slug="{slug}"}}</u> &raquo; 🡺</a>
+					<a class="next" href='{{ delphineachard:next_album champ="url" slug="{slug}"}}'>see nex album : &laquo; <u>{{ delphineachard:next_album champ="title" slug="{slug}"}}</u> &raquo; {{ delphineachard:fleche }}</a>
 				</p>
 				{{ delphineachard:next_album fin="true" slug="{slug}"}}
 

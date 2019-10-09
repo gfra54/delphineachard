@@ -29,6 +29,25 @@ header {
 		left: 40px;
 	}
 }
+a.back , a.next {
+	svg {
+		display: inline-block;
+		width: .6em;
+		height: .8em;
+		fill:currentColor;		
+	}
+}
+a.back {
+	svg {
+		margin-right: .3em;
+	}
+}
+a.next {
+	svg {
+		transform: rotate(180deg);
+		margin-left: .3em;
+	}
+}
 .dummy {
 	width: 1px;
 	height: 1px;
@@ -88,18 +107,9 @@ a:hover {
 			font-family: Poppins;
 			font-size: 40px;
 			text-transform: lowercase;
-			&:after {
-				opacity: 0;
-				display: inline-block;
-				content:'🡰';
-				margin-left: .5em;
-			}
 			&:hover {
 				text-shadow: 0px;
 				background:white;
-				&:after {
-					opacity: 1;
-				}
 			}
 		}
 	}
@@ -111,6 +121,8 @@ a:hover {
 		margin-left: 150px;
 	}
 }
+
+
 
 .album {
 
@@ -141,27 +153,35 @@ a:hover {
 	}
 	.lien-slide {
 		z-index: 1000;
-		text-shadow: 1px 1px 7px rgba(0,0,0,0.5);
 		user-select: none;		
-		width: 100px;
+		width: 65px;
+		padding:15px;
 		text-align: center;
 		font-size: 40px;
 		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
-		&:before {
-			display: block;
+		svg {
+			filter: drop-shadow( 1px 1px 7px rgba(0,0,0,0.5));
+			fill:white;
+			transition:fill .3s ease;
+		}
+		&:hover {
+			svg {
+				fill:black;
+			filter: drop-shadow( 1px 1px 7px rgba(256,256,256,0.5));
+			}
 		}
 		&.next-slide {
-			bottom: 15px;
-			&:before {
-				content:'🢃';
+			bottom: 0;
+			svg {
+				transform: rotate(-90deg);
 			}
 		}
 		&.prev-slide {
-			top: 15px;
-			&:before {
-				content:'🡹';
+			top: 0;
+			svg {
+				transform: rotate(90deg);
 			}
 		}
 	}

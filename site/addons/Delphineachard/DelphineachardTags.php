@@ -18,6 +18,9 @@ class DelphineachardTags extends Tags
         //
     }
 
+    public function fleche() {
+        return file_get_contents(dirname(__FILE__).'/../../themes/delphineachard/img/fleche.svg');
+    }
     /**
      * The {{ delphineachard:example }} tag
      *
