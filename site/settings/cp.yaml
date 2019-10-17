@@ -1,0 +1,12 @@
+start_page: dashboard
+date_format: Y/n/d
+pagination_size: 50
+widgets:
+  -
+    type: collection
+    collection: albums
+    limit: 10
+    width: full
+  -
+    type: template
+    template: dashboard

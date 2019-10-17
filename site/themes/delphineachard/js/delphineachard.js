@@ -25,7 +25,7 @@ $(document).ready(function() {
 				let illustration = $(this).data('illustration');
 
 				let classes = 'visible';
-				console.log($(this).data('afficher_en_plein_ecran'))
+				console.log(illustration,$(this).data('afficher_en_plein_ecran'))
 
 				if($(this).data('afficher_en_plein_ecran')) {
 					classes+=' illustration-fullscreen';

@@ -6,9 +6,9 @@
 				<h2 class="title has-text-white">
 					{{ title }}
 				</h2>
-				<h3 class="subtitle has-text-light">
-					<p>{{ description }}</p>
-				</h3>
+				<p class="subtitle has-text-light">
+					{{ description }}
+				</p>
 				<p>{{ docs|count }} pictures in this album</p>
 				<p class="has-text-white">-</p>
 				<p>
@@ -16,7 +16,8 @@
 				</p>
 			</div>
 		</div>
-		<a class="lien-slide next-slide has-text-white" href="#s1">{{ delphineachard:fleche }}</a>
+		
+		{{partial:fleche sens="next" ancre="1"}}
 	</section>
 
 	{{ docs }}
@@ -28,7 +29,7 @@
 
 	<a name="s{{docs | count | add:1}}"></a>
 	<section class="hero is-fullheight has-text-white has-background-dark">
-		<a class="lien-slide prev-slide has-text-white" href="#s0">{{ delphineachard:fleche }}</a>
+		{{partial:fleche sens="prev" ancre="0"}}
 		<div class="hero-body">
 			<div class="container">
 				<p class="subtitle has-text-white">this was ...</p>
