@@ -6,6 +6,6 @@ local/cache/*
 local/storage/*
 local/temp/*
 installer.php
-/assets
-/site/content
-/site/users
+#/assets
+#/site/content
+#/site/users
