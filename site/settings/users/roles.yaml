@@ -1,0 +1,5 @@
+73230279-7796-4443-8358-a4c9dc13dd5c:
+  title: Admin
+  slug: admin
+  permissions:
+    - super
