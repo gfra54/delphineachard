@@ -1,6 +1,13 @@
 var sti=false;
 var illustration_originale=false;
 $(document).ready(function() {
+	$(window).scroll(function() {
+		if($(window).scrollTop() > ($(window).height()/2)) {
+			$('footer').addClass('visible');
+		} else {
+			$('footer').removeClass('visible');
+		}
+	});
 	$('.albums a').each(function() {
 		if($(this).data('illustration')) {
 			if(!$(this).data('illustration').includes('mp4')) {
