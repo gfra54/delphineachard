@@ -12,8 +12,9 @@ sections:
         display: 'Illustration par défaut de la page d''accueil'
       afficher_en_plein_ecran_home:
         type: toggle
-        display: 'Afficher en plein écran'
+        display: 'Afficher en plein écran sur la page d''accueil desktop'
         default: true
+        width: 50
       couleur_de_fond_home:
         options:
           white: 'Fond blanc'

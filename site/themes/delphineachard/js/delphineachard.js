@@ -9,31 +9,50 @@ $(document).ready(function() {
 		}
 	});
 	$('.albums a').each(function() {
-		if($(this).data('illustration')) {
-			if(!$(this).data('illustration').includes('mp4')) {
-				$('<img src="'+$(this).data('illustration')+'" class="dummy">').appendTo('body');
+		if(illustration = illustrations[$(this).data('index')]) {
+			if(!illustration.video) {
+				$('<img src="'+illustration.image+'" class="dummy">').appendTo('body');
 			}
 		}
 	})
 	if($('.albums').length) {
-		illustration_originale = document.querySelector('.illustration').outerHTML;
-		$('.illustration').addClass('visible');
-
+		let cible = $('.illustration');
+		illustration_originale = cible[0].outerHTML;
+		cible.addClass('visible');
 	}
 
 
 	$('.albums a').on('mouseover',function() {
-		if($(this).data('illustration')) {
+		if(illustration = illustrations[$(this).data('index')]) {
 			reset_illustration();
-			console.log($(this).data('afficher_en_plein_ecran'))
 
+			let cible = $('.illustration');
 
-			sti = setTimeout(() => {
-				let illustration = $(this).data('illustration');
+			let classes = 'visible';
+			if($(this).data('afficher_en_plein_ecran')) {
+				classes+=' illustration-fullscreen';
+			}
+			if($(this).data('couleur_de_fond') == 'white') {
+				classes+=' has-background-white';
+			} else {
+				classes+=' has-background-black';
+			}
+
+			if(illustration.video) {
+				cible.html(video_code(illustration.video));
+			} else {
+				console.log(illustration.image);
+				cible.css('background-image','url('+illustration.image+')');
+				cible.css('background-position','url('+illustration.focus+')');
+			}
+			cible.addClass(classes);
+
+/*			console.log($(this).data('afficher_en_plein_ecran'))
+			devices.forEach(function(device){
+				let illustration = $(this).data('illustration-'+device);
+				let cible = $('.illustration[data-device="'+device+'"]');
 
 				let classes = 'visible';
-				console.log(illustration,$(this).data('afficher_en_plein_ecran'))
-
 				if($(this).data('afficher_en_plein_ecran')) {
 					classes+=' illustration-fullscreen';
 				}
@@ -43,20 +62,20 @@ $(document).ready(function() {
 					classes+=' has-background-black';
 				}
 
-				if(illustration.includes('mp4')) {
-					$('.illustration').html(video_code(illustration));
+				if($(this).data('video')) {
+					cible.html(video_code($(this).data('video')));
 				} else {
-					$('.illustration').css('background-image','url('+illustration+')');
+					cible.css('background-image','url('+illustration+')');
 				}
-				$('.illustration').addClass(classes);
-			}, 300);
+				cible.addClass(classes);
+			});*/
 		}
 	}).on('mouseout', () => {
 		reset_illustration()
 		sti = setTimeout(() => {
-			$('.illustration').replaceWith(illustration_originale);
-//			$('.illustration').css('background-image',$('.illustration').data('background-image'))
-			$('.illustration').addClass('visible');
+			let cible = $('.illustration');
+			cible.replaceWith(illustration_originale);
+			cible.addClass('visible');
 		}, 300);
 	})
 
@@ -96,31 +115,31 @@ $('a[href*="#"]')
   .click(function(event) {
     // On-page links
     if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
+    	location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+    	&& 
+    	location.hostname == this.hostname
+    	) {
       // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+  var target = $(this.hash);
+  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       // Does a scroll target exist?
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
         $('html, body').animate({
-          scrollTop: target.offset().top
+        	scrollTop: target.offset().top
         }, 500, function() {
           // Callback after animation
           // Must change focus!
           var $target = $(target);
           $target.focus();
           if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
+          	return false;
           } else {
             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
             $target.focus(); // Set focus again
-          };
-        });
-      }
+        };
+    });
     }
-  });
+}
+});
