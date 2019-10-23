@@ -17,8 +17,8 @@ $(document).ready(function() {
 	})
 	if($('.albums').length) {
 		let cible = $('.illustration');
-		illustration_originale = cible[0].outerHTML;
 		cible.addClass('visible');
+		illustration_originale = cible[0].outerHTML;
 	}
 
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 		sti = setTimeout(() => {
 			let cible = $('.illustration');
 			cible.replaceWith(illustration_originale);
-			cible.addClass('visible');
+			// cible.addClass('visible');
 		}, 300);
 	})
 
