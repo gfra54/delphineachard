@@ -1,43 +1,43 @@
 <script>
     var illustrations = {};
 </script>
-    <section class="hero is-fullheight wrapper">
-    	<div class="hero-body">
-    		<div class="container contenu">
-    			<section>
-    				<ul class="albums">
-    					{{ collection:albums }}
-    					<li><a data-index="{{ index }}" 
-                            href="{{ url }}">
-                            {{ title }}                            
-                        </a>
-<script>
-    {{ if illustration }} 
-    illustrations[{{ index }}] = {
-        illustration : '{{ illustration | urlencode }}',
-        couleur_de_fond: '{{couleur_de_fond}}',
-        afficher_en_plein_ecran:'{{ afficher_en_plein_ecran }}',
-        video:'{{ if illustration | contains:mp4 }}{{ illustration | urlencode }}{{ /if }}',
-        {{ asset:illustration }}
+<section class="hero is-fullheight wrapper">
+   <div class="hero-body">
+      <div class="container contenu">
+         <section>
+            <ul class="albums">
+               {{ collection:albums }}
+               <li><a data-index="{{ index }}" 
+                href="{{ url }}">
+                {{ title }}                            
+            </a>
+            <script>
+                {{ if illustration }} 
+                illustrations[{{ index }}] = {
+                    illustration : '{{ illustration | urlencode }}',
+                    couleur_de_fond: '{{couleur_de_fond}}',
+                    afficher_en_plein_ecran:'{{ afficher_en_plein_ecran }}',
+                    video:'{{ if illustration | contains:mp4 }}{{ illustration | urlencode }}{{ /if }}',
+                    {{ asset:illustration }}
 
-        image:'{{ glide:url width="1900"}}',
-        focus:'{{focus_css}}',
-        
-        {{ /asset:illustration }}
-    };
-    {{ /if }}
- 
-</script>
-                        </li>
-    					{{ /collection:albums }}
-    					<!-- <li><a href="about">about</a></li> -->
-    					<li><a href="contact">contact</a></li>
-    				</ul>
+                    image:'{{ glide:url width="1900"}}',
+                    focus:'{{focus_css}}',
+                    
+                    {{ /asset:illustration }}
+                };
+                {{ /if }}
+                
+            </script>
+        </li>
+        {{ /collection:albums }}
+        <!-- <li><a href="about">about</a></li> -->
+        <li><a href="contact">contact</a></li>
+    </ul>
 
-    			</section>
-    		</div>
-            <div class="illustration {{if couleur_de_fond_home == 'white'}}has-background-white{{else}}has-background-black{{/if}} {{if afficher_en_plein_ecran_home}}illustration-fullscreen{{/if}}" style='background-image:url({{ glide:illustration_home width="1900" }});{{asset:illustration_home}}background-position: {{ focus_css }}{{/asset:illustration_home}}'></div>
+</section>
+</div>
+<div class="illustration {{if couleur_de_fond_home == 'white'}}has-background-white{{else}}has-background-black{{/if}} {{if afficher_en_plein_ecran_home}}illustration-fullscreen{{/if}}" style='background-image:url({{ glide:illustration_home width="1900" }});{{asset:illustration_home}}background-position: {{ focus_css }}{{/asset:illustration_home}}'></div>
 
-    	</div>
-    </section>
+</div>
+</section>
 

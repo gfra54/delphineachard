@@ -11,7 +11,10 @@
 		</section>
 	{{ else }}
 		<section class="hero is-fullheight document {{if couleur_de_fond == 'white'}}has-background-white{{ else }}has-background-black{{ /if }}" style='background-image: url({{ photo | urlencode }});background-color: {{couleur_de_fond}}'>
+			{{if index > 1}}
 			{{partial:fleche sens="prev" ancre="{{index | subtract:1}}"}}
+			{{endif}}
+
 			<div class="hero-body">
 				<div class="container">
 
